@@ -11,7 +11,9 @@
 
   <ion-item class="conteiner-pesquisar">
     <ion-label color="primary" floating>Pesquisar</ion-label>
-    <ion-input
+    <ion-input 
+      #descricaoProcurado (keyup) = '0'
+      id="input-pesquisar"
       style="background-image: url('assets/imgs/icone-pesquisar.png');"></ion-input>
   </ion-item>
 
@@ -19,7 +21,7 @@
     <ion-card-content>
 
       <ion-list>
-        <button ion-item *ngFor="let produto of carrinhoCompras">
+        <button ion-item *ngFor="let produto of carrinhoCompras | filtroPorDescricao: descricaoProcurado.value">
           <ion-row>
             <ion-col col-11>
               {{produto.descricao}}

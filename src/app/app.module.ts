@@ -15,6 +15,8 @@ import { DetalhesProduto } from '../pages/detalhes-produto/detalhes-produto';
 
 import { ProdutoService } from '../domain/produto/produto-service';
 
+import { FiltroPorDescricao } from '../pages/resumo-compra/tab-carrinho-compra/tab-carrinho-compra.pipes'
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +25,8 @@ import { ProdutoService } from '../domain/produto/produto-service';
     ResumoCompra,
     TabResumo,
     TabCarrinhoCompra,
-    DetalhesProduto
+    DetalhesProduto,
+    FiltroPorDescricao
     
   ],
   imports: [
