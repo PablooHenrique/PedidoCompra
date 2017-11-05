@@ -6,7 +6,6 @@ import {ProdutoEntity} from '../../../domain/produto/produto-entity';
 
 import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 
-
 @Component({
     selector : 'tab-resumo',
     templateUrl:'tab-resumo.html'
@@ -17,7 +16,7 @@ export class TabResumo{
     public produto: ProdutoEntity;
     
 
-    constructor(public navCtrl : NavController, private _produtoService: ProdutoService, private _barcode: BarcodeScanner){
+    constructor(public navCtrl : NavController, private _produtoService: ProdutoService, private _barcode : BarcodeScanner){
         this.produto = this._produtoService.obterUltimoProdutoAdicionadoAoCarrinho();
 
         this.produtos = [
@@ -30,7 +29,10 @@ export class TabResumo{
     }
 
     async scanBarcode(){
-        const result = await this._barcode.scan();
-        console.log(result);
+        let result = this._barcode.scan();
+        result.then(x=>{
+            let produto = this._produtoService.pesquisarProdutoPorCodigo(x.text);
+            this.navCtrl.push(DetalhesProduto, {produto: produto, acao: 'INSERIR'});
+        });
     }
 }

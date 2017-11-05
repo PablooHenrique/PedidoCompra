@@ -98,4 +98,8 @@ export class ProdutoService{
     obterUltimoProdutoAdicionadoAoCarrinho(){
         return this.ultimoProdutoAdicionadoAoCarrinho;
     }
+
+    pesquisarProdutoPorCodigo(codigo){
+        return this.produtos.find(produto=>produto.codigo == codigo);
+    }
 }
