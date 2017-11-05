@@ -19,10 +19,10 @@
       <div>Ultimo Item Adicionado</div>
       <br>
       <ion-list>
-        <button ion-item>
+        <button ion-item *ngFor="let produto of produtos">
           <ion-row>
             <ion-col col-11>
-              Pizza
+              {{produto.descricao}}
             </ion-col>
             <ion-col col-1>
               <div style="text-align: right">
