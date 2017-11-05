@@ -11,7 +11,9 @@ import { ResumoCompra } from '../pages/resumo-compra/resumo-compra';
 
 import { TabResumo } from '../pages/resumo-compra/tab-resumo/tab-resumo';
 import { TabCarrinhoCompra } from '../pages/resumo-compra/tab-carrinho-compra/tab-carrinho-compra';
-import {DetalhesProduto} from '../pages/detalhes-produto/detalhes-produto';
+import { DetalhesProduto } from '../pages/detalhes-produto/detalhes-produto';
+
+import { ProdutoService } from '../domain/produto/produto-service';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import {DetalhesProduto} from '../pages/detalhes-produto/detalhes-produto';
   providers: [
     StatusBar,
     SplashScreen,
+    ProdutoService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

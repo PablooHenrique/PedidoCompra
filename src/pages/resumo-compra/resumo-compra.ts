@@ -13,6 +13,8 @@ export class ResumoCompra{
     tabResumo : any;
     tabCarrinhoCompra : any;
 
+    produtos: any;
+
     constructor(){
         this.tabResumo = TabResumo;
         this.tabCarrinhoCompra = TabCarrinhoCompra;

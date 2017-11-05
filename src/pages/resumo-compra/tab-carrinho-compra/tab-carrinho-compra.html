@@ -10,15 +10,30 @@
 <ion-content class="conteiner">
 
   <ion-item class="conteiner-pesquisar">
-    
     <ion-label color="primary" floating>Pesquisar</ion-label>
-    
     <ion-input
       style="background-image: url('assets/imgs/icone-pesquisar.png');"></ion-input>
   </ion-item>
 
   <ion-card>
     <ion-card-content>
+
+      <ion-list>
+        <button ion-item *ngFor="let produto of carrinhoCompras">
+          <ion-row>
+            <ion-col col-11>
+              {{produto.descricao}}
+            </ion-col>
+            <ion-col col-1>
+              <div style="text-align: right">
+                <ion-icon class="icone-information" end name="information-circle"></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+        </button>
+      </ion-list>
+
+
 
 
     </ion-card-content>
