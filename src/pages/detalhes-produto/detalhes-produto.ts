@@ -19,6 +19,7 @@ export class DetalhesProduto{
 
         if(this._acao == 'INSERIR'){
             this.descricaoBotao = 'Inserir Produto';
+            this._produtoService.adicionarProdutoAoCarrinho(this.produto);
         }else{
             this.descricaoBotao = 'Remover Produto';
         }

@@ -10,16 +10,16 @@
 <ion-content class="conteiner">
     <ion-card>
       <div class="img-produto">
-        <img src="https://up-1.cdn-fullscreendirect.com/production/photos/10272/small/20170308_225340_10272_972071.png"/>
+        <img src="{{produto.urlImagem}}"/>
       </div>
       <hr>
       <ion-card-content class="card-content">
         <ion-card-title>
-          Pizza
+          {{produto.descricao}}
         </ion-card-title>
         
         <div class="detalhes-produto">
-          <div>Preço: R$ 50,00</div> 
+          <div>Preço: R$ {{produto.preco}}</div> 
           <div>Quantidade: 2</div>
           <div>Total: R$ 200,00</div>
         </div>
