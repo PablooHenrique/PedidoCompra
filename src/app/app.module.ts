@@ -17,6 +17,8 @@ import { ProdutoService } from '../domain/produto/produto-service';
 
 import { FiltroPorDescricao } from '../pages/resumo-compra/tab-carrinho-compra/tab-carrinho-compra.pipes'
 
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -46,7 +48,8 @@ import { FiltroPorDescricao } from '../pages/resumo-compra/tab-carrinho-compra/t
     StatusBar,
     SplashScreen,
     ProdutoService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BarcodeScanner
   ]
 })
 export class AppModule {}
