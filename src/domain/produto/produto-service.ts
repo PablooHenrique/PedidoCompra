@@ -106,4 +106,16 @@ export class ProdutoService{
     adicionarProdutoAoCarrinho(produto : ProdutoEntity){
         this.carrinhoCompras.push(produto);
     }
+
+    removerProdutoCarrinhoCompras(produto : ProdutoEntity){
+        let ar : ProdutoEntity[];
+
+        this.carrinhoCompras.forEach(element => {
+            if(element.codigo != produto.codigo){
+                ar.push(element);
+            }
+        });
+
+        this.carrinhoCompras = ar;
+    }
 }

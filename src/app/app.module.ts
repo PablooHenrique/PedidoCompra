@@ -12,6 +12,7 @@ import { ResumoCompra } from '../pages/resumo-compra/resumo-compra';
 import { TabResumo } from '../pages/resumo-compra/tab-resumo/tab-resumo';
 import { TabCarrinhoCompra } from '../pages/resumo-compra/tab-carrinho-compra/tab-carrinho-compra';
 import { DetalhesProduto } from '../pages/detalhes-produto/detalhes-produto';
+import { FinalizarPedido} from '../pages/finalizar-pedido/finalizar-pedido';
 
 import { ProdutoService } from '../domain/produto/produto-service';
 
@@ -28,7 +29,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     TabResumo,
     TabCarrinhoCompra,
     DetalhesProduto,
-    FiltroPorDescricao
+    FiltroPorDescricao,
+    FinalizarPedido
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     ResumoCompra,
     TabResumo,
     TabCarrinhoCompra,
-    DetalhesProduto
+    DetalhesProduto,
+    FinalizarPedido
   ],
   providers: [
     StatusBar,

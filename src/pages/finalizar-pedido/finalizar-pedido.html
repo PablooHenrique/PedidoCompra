@@ -8,23 +8,25 @@
 
 
 <ion-content class="conteiner">
+    <div class="titulo-inicial">Forma de Pagamento</div>
+
     <ion-card>
-      <div class="img-produto">
-        <img src="{{produto.urlImagem}}"/>
-      </div>
-      <hr>
+        <ion-card-content>
+            <img src="assets/imgs/icone-cartao.png" alt="cartão">
+            Cartao Visa 5533
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
       <ion-card-content class="card-content">
         <ion-card-title>
-          {{produto.descricao}}
+          Valor Total: R$: 560,00
         </ion-card-title>
         
         <div class="detalhes-produto">
-          <div>Preço: R$ {{produto.preco}}</div> 
-          <div>Quantidade: 2</div>
-          <div>Total: R$ 200,00</div>
+          <div>Quantidade Itens: 2</div>
         </div>
         
-        <button ion-button full color="orange" (click)="inserirProduto()">{{descricaoBotao}}</button>
+        <button ion-button full color="orange">Confirmar Pagamento</button>
         <div class="card-bottom"></div>
 
       </ion-card-content>

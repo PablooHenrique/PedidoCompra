@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {DetalhesProduto} from '../../detalhes-produto/detalhes-produto';
+import {FinalizarPedido} from '../../finalizar-pedido/finalizar-pedido'
 import {ProdutoService} from '../../../domain/produto/produto-service';
 import {ProdutoEntity} from '../../../domain/produto/produto-entity';
 
@@ -25,7 +26,7 @@ export class TabResumo{
     }
 
     detalhesProduto(){
-        this.navCtrl.push(DetalhesProduto);
+        this.navCtrl.push(FinalizarPedido);
     }
 
     async scanBarcode(){
