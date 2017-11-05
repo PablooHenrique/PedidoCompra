@@ -20,7 +20,7 @@
   <ion-card>
     <ion-card-content>
       <ion-list>
-        <button ion-item *ngFor="let produto of carrinhoCompras | filtroPorDescricao: descricaoProcurado.value">
+        <button ion-item *ngFor="let produto of carrinhoCompras | filtroPorDescricao: descricaoProcurado.value" (click)="editarProduto(produto)">
           <ion-row>
             <ion-col col-11>
               {{produto.descricao}}
@@ -37,6 +37,6 @@
   </ion-card>
 
   <ion-fab right bottom>
-    <button color="orange" ion-fab>+</button>
+    <button color="orange" ion-fab (click)="scanBarcode()">+</button>
   </ion-fab>
 </ion-content>`

@@ -102,4 +102,8 @@ export class ProdutoService{
     pesquisarProdutoPorCodigo(codigo){
         return this.produtos.find(produto=>produto.codigo == codigo);
     }
+
+    adicionarProdutoAoCarrinho(produto : ProdutoEntity){
+        this.carrinhoCompras.push(produto);
+    }
 }
