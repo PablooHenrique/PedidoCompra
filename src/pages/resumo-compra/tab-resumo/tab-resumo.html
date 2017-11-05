@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="orange" class="barra-navegacao">
+      <ion-buttons end>
+        <ion-label id="btn-logout"><a href="">Sair</a></ion-label>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="conteiner">
+
+  <ion-card>
+    <ion-card-content class="card-content">
+      <div>Quantidade Itens: 3 </div>
+      <div>Preço Total: R$: 30,00 </div> 
+
+      <br>
+      <br>
+
+      <div>Ultimo Item Adicionado</div>
+      <br>
+      <ion-list>
+        <button ion-item>
+          <ion-row>
+            <ion-col col-11>
+              Pizza
+            </ion-col>
+            <ion-col col-1>
+              <div style="text-align: right">
+                <ion-icon class="icone-information" end name="information-circle"></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+
+        </button>
+      </ion-list>
+      <br>
+      <button ion-button full color="orange" (click)="detalhesProduto()">Finalizar Pedido</button>
+      
+      <div class="card-bottom"></div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+    <button color="orange" ion-fab>+</button>
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,28 @@
+tab-carrinho-compra{
+    .barra-navegacao{
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+    } 
+
+    .conteiner{
+
+        background-color: #EEEEEE;
+
+        .conteiner-pesquisar{
+            padding-bottom: 5%;
+            background-color: #EEEEEE;
+
+            ion-label{
+                font-size: 14px;
+            }
+
+            ion-input{
+                background-repeat: no-repeat;
+                background-position: center right;
+            }
+        }
+    }
+}

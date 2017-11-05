@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="orange" class="barra-navegacao">
+      <ion-buttons end>
+        <ion-label id="btn-logout"><a href="">Sair</a></ion-label>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="conteiner">
+  <ion-card>
+    <div class="img-usuario">
+      <img src="assets/imgs/sombra-usuario.jpg" alt="Usuario">
+    </div>
+
+    <ion-card-content class="card-content">
+
+      <div>Euardo Peixoto</div>
+      <p>Pc Sistemas</p>
+
+      <button ion-button full color="orange" (click)="inicializarPedido()">Inicializar Pedido</button>
+
+      <div class="card-bottom"></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
