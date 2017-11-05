@@ -27,7 +27,6 @@ import { FiltroPorDescricao } from '../pages/resumo-compra/tab-carrinho-compra/t
     TabCarrinhoCompra,
     DetalhesProduto,
     FiltroPorDescricao
-    
   ],
   imports: [
     BrowserModule,
