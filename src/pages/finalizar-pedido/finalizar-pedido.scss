@@ -9,11 +9,49 @@ finalizar-pedido{
 
     .conteiner{
         background-color: #EEEEEE;
+        
+        .forma-pagamento{
+            margin: 3%;
+        }
+
+        .card-content{
+            padding: 0px;
+
+            ion-card-title{
+                margin: 3%;
+            }
+        }
+
 
         .titulo-inicial{
             margin-top: 5%;
             margin-left: 5%;
             font-size: 15px;
         }
+        .img-cartao-credito{
+            height: 100%;
+            width: 80%;
+        }
+
+        .descricao-forma-pagamento{
+            text-align: center;
+            font-size: 15px;
+            margin-top: 2%;
+        }
+
+        button{
+                margin-top: 10%;
+        }
+
+        .card-bottom{
+            height: 3px;
+            width: 100%;
+            background-color: #F18E00;
+        }
+
+        .detalhes-produto{
+            margin-left: 3%;
+        }
+        
     }
 }

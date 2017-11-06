@@ -27,12 +27,9 @@ export class DetalhesProduto{
     }
 
     actionBotao(){
-        console.log('ACAO:' + this._acao)
         if(this._acao == 'INSERIR'){
-            console.log('inserindo');
             this.inserirProduto();
         }else{
-            console.log('removendo');
             this.removerProduto();
         }
     }
@@ -40,10 +37,10 @@ export class DetalhesProduto{
     inserirProduto(){
         this._produtoService.adicionarProdutoAoCarrinho(this.produto);
         this._navCtrl.push(TabCarrinhoCompra);
-        console.log(this._produtoService.listarCarrinhoCompras());
     }
 
     removerProduto(){
         this._produtoService.removerProdutoCarrinhoCompras(this.produto);
+        this._navCtrl.push(TabCarrinhoCompra);
     }
 }

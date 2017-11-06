@@ -11,9 +11,19 @@
     <div class="titulo-inicial">Forma de Pagamento</div>
 
     <ion-card>
-        <ion-card-content>
-            <img src="assets/imgs/icone-cartao.png" alt="cartão">
-            Cartao Visa 5533
+        <ion-card-content class="card-content">
+          <div class="forma-pagamento">
+            <ion-row>
+              <ion-col col-3>
+                <div class="img-cartao-credito">
+                  <img src="assets/imgs/icone-cartao.png" alt="cartão">
+                </div>
+              </ion-col>  
+              <ion-col col-9>
+                <div class="descricao-forma-pagamento">Cartao Visa 5533</div>
+              </ion-col>
+            </ion-row>
+          </div>
         </ion-card-content>
     </ion-card>
     <ion-card>
@@ -28,7 +38,6 @@
         
         <button ion-button full color="orange">Confirmar Pagamento</button>
         <div class="card-bottom"></div>
-
       </ion-card-content>
     </ion-card>
 </ion-content>
