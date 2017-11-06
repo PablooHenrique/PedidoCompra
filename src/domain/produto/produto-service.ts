@@ -1,11 +1,15 @@
+import {Http, Headers} from '@angular/http';
+import {Injectable} from '@angular/core';
+
 import {ProdutoEntity} from '../produto/produto-entity';
 
+@Injectable()
 export class ProdutoService{
     private produtos : ProdutoEntity[];
     private ultimoProdutoAdicionadoAoCarrinho : ProdutoEntity;
     private carrinhoCompras : ProdutoEntity[];
 
-    constructor(){
+    constructor(private _http: Http){
         this.produtos = [
                 {codigo: 1,
                  descricao:'Arroz',
@@ -117,5 +121,35 @@ export class ProdutoService{
         });
 
         this.carrinhoCompras = ar;
+    }
+
+    enviarPedido(){
+        let body = {
+	                "cabecalho": {
+		            "numero": 1,
+		            "codigoRca": 10,
+		            "cgcCliente": "86.760.972/0001-08",
+		            "dataAbertura": "2017-10-26T15:56:28.291",
+		            "dataFechamento": "2017-10-26T15:56:28.291",
+		            "codigoFilial": "1",
+		            "codigoCobranca": "D",
+		            "codigoPlanoPagamento": 1,
+		            "tipoDeVenda": "1"},
+                    "itens": [{
+                            "codigoProduto": 1,
+                            "quantidade": {
+                                "valor": 10.000000
+                            },
+                            "precoVenda": {
+                                "valor": 12.000000
+                            },
+                            "numeroSequencial": 1
+                        }]
+                   }
+
+            let url = 'http://localhost:8080/winthor/integracao/v0/'
+            let headers = new Headers();
+            headers.append('Content-Type', 'application/json');
+            return this._http.post(url, body, {headers}).toPromise();
     }
 }
