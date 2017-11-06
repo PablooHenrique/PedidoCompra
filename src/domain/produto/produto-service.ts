@@ -108,14 +108,7 @@ export class ProdutoService{
     }
 
     removerProdutoCarrinhoCompras(produto : ProdutoEntity){
-        let ar : ProdutoEntity[];
+        this.carrinhoCompras.splice(produto.codigo);
 
-        this.carrinhoCompras.forEach(element => {
-            if(element.codigo != produto.codigo){
-                ar.push(element);
-            }
-        });
-
-        this.carrinhoCompras = ar;
     }
 }
