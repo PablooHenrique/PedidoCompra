@@ -7,7 +7,7 @@ import {ProdutoEntity} from '../produto/produto-entity';
 export class ProdutoService{
     private produtos : ProdutoEntity[];
     private ultimoProdutoAdicionadoAoCarrinho : ProdutoEntity;
-    private carrinhoCompras : ProdutoEntity[];
+    private carrinhoCompras = [];
 
     constructor(private _http: Http){
         this.produtos = [
@@ -67,28 +67,11 @@ export class ProdutoService{
                  urlImagem:'http://www.belezaesaude.net.br/fotos/mega_noticias/mid/157.jpg'}
             ];
 
-        this.carrinhoCompras = [
-                {codigo: 1,
-                 descricao:'Arroz',
-                 preco:15.00,
-                 urlImagem:'http://www.redebem.com/loja/redebem/components/com_virtuemart/shop_image/product/Arroz_Tio_Jorge__4bcef2ef679d2.png'},
-
-                {codigo: 2,
-                 descricao:'Feijão',
-                 preco:3.50,
-                 urlImagem:'http://www.natashopping.com.br/lojas/supermercadonata/produtos/18391/galeria/fjao%20tj.jpg'},
-
-                {codigo: 3,
-                 descricao:'Açucar',
-                 preco:7.00,
-                 urlImagem:'https://www.paodeacucar.com/img/uploads/1/542/458542.jpg?type=product'}
-            ];
-
-        this.ultimoProdutoAdicionadoAoCarrinho = 
-            {codigo: 5,
-             descricao:'Pizza Congelada',
-             preco:11.00,
-             urlImagem:'http://coopsp.vteximg.com.br/arquivos/ids/156195-804-804/7893000672109_Pizza-congelada-frango-com-catupiry-mussarela-Sadia---460g.jpg?v=636132678634830000'};
+        // this.ultimoProdutoAdicionadoAoCarrinho = 
+        //     {codigo: 5,
+        //      descricao:'Pizza Congelada',
+        //      preco:11.00,
+        //      urlImagem:'http://coopsp.vteximg.com.br/arquivos/ids/156195-804-804/7893000672109_Pizza-congelada-frango-com-catupiry-mussarela-Sadia---460g.jpg?v=636132678634830000'};
     }
 
     listarCarrinhoCompras(){
@@ -109,6 +92,7 @@ export class ProdutoService{
 
     adicionarProdutoAoCarrinho(produto : ProdutoEntity){
         this.carrinhoCompras.push(produto);
+        this.ultimoProdutoAdicionadoAoCarrinho = produto;
     }
 
     removerProdutoCarrinhoCompras(produto : ProdutoEntity){

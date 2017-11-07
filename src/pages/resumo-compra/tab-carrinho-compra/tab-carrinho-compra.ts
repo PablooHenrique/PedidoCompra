@@ -18,8 +18,6 @@ export class TabCarrinhoCompra{
 
     constructor(private _produtosService : ProdutoService, public navCtrl : NavController, private _barcode : BarcodeScanner){
         this.carrinhoCompras = this._produtosService.listarCarrinhoCompras();
-        console.log('Passei no construtor');
-        console.log(this.carrinhoCompras);
     }
 
     async scanBarcode(){

@@ -1,27 +1,21 @@
 import {Component} from '@angular/core';
-import {ToastController} from 'ionic-angular';
-
-import {ProdutoService} from '../../domain/produto/produto-service';
+import {ToastController, LoadingController} from 'ionic-angular';
 
 @Component({
     selector:'finalizar-pedido',
     templateUrl:'finalizar-pedido.html'
 })
 export class FinalizarPedido{
-    constructor(private _produtoService: ProdutoService, private _toastCtrl : ToastController){}
+    constructor(private _toastCtrl : ToastController, private _loadingCtrl : LoadingController){}
 
     enviarPedido(){
-        this._produtoService.enviarPedido()
-        .then(response => {
-                console.log(response);
-                let toast = this.criarToast("Pedido Enviado Com Sucesso");
-                toast.present();
-            }
-        ).catch(err=>{
-            console.log(err);
-            let toast = this.criarToast("Erro ao enviar pedido");
+        let loading = this.criarLoading();
+        loading.present();
+        setTimeout(x=>{
+            loading.dismiss();
+            let toast = this.criarToast("Pedido Criado Com Sucesso");
             toast.present();
-        });
+        }, 2000)
     }
 
     criarToast(msg : string){
@@ -33,5 +27,10 @@ export class FinalizarPedido{
         });
 
         return toast;
-    }    
+    }   
+
+    criarLoading(){
+        let loading = this._loadingCtrl.create({});
+        return loading;
+    } 
 }

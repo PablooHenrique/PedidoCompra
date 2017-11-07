@@ -10,16 +10,16 @@
 
   <ion-card>
     <ion-card-content class="card-content">
-      <div>Quantidade Itens: 3 </div>
-      <div>Preço Total: R$: 30,00 </div> 
+      <div>Quantidade Itens: {{quantidadeItens}} </div>
+      <div>Preço Total: R$: {{valorTotalItens}} </div> 
 
       <br>
       <br>
 
       <div>Ultimo Item Adicionado</div>
       <br>
-      <ion-list>
-        <button ion-item *ngFor="let produto of produtos">
+      <ion-list *ngIf="produtos">
+        <button ion-item *ngFor="let produto of produtos" (click)="editarProduto(produto)">
           <ion-row>
             <ion-col col-11>
               {{produto.descricao}}
