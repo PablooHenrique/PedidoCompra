@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
+
 import {TabResumo} from './tab-resumo/tab-resumo';
 import {TabCarrinhoCompra} from './tab-carrinho-compra/tab-carrinho-compra';
 
@@ -15,7 +17,7 @@ export class ResumoCompra{
 
     produtos: any;
 
-    constructor(){
+    constructor(private _navCtrl : NavController){
         this.tabResumo = TabResumo;
         this.tabCarrinhoCompra = TabCarrinhoCompra;
     }

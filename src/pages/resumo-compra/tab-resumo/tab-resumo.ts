@@ -13,6 +13,8 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 })
 export class TabResumo{
 
+    public quantidadeItens: number;
+    public valorTotalItens: number;
     public produtos;
     public produto: ProdutoEntity;
     
@@ -20,13 +22,58 @@ export class TabResumo{
     constructor(public navCtrl : NavController, private _produtoService: ProdutoService, private _barcode : BarcodeScanner){
         this.produto = this._produtoService.obterUltimoProdutoAdicionadoAoCarrinho();
 
-        this.produtos = [
-            {codigo: this.produto.codigo,descricao: this.produto.descricao, preco: this.produto.preco}
-        ];
+        if(this.produto != null){
+            this.produtos = [
+                {codigo: this.produto.codigo,descricao: this.produto.descricao, preco: this.produto.preco}
+            ];
+        }
+    }
+
+    ngOnInit() {
+        this.quantidadeItens = this.calcularQuantidadeItensCarrinho();
+        this.valorTotalItens = this.calcularValorTotalItens();
+        console.log('OnInit');
+    }
+
+    ionViewWillLeave(){
+        this.quantidadeItens = this.calcularQuantidadeItensCarrinho();
+        this.valorTotalItens = this.calcularValorTotalItens(); 
+        console.log('WillLeave');
+    }
+
+    ionViewDidLoad(){
+        console.log('DidLoad');
+    }
+
+    calcularQuantidadeItensCarrinho(){
+        let carrinho = this._produtoService.listarCarrinhoCompras();
+        if(carrinho != null){
+            return carrinho.length;
+        }
+
+        return 0;
+    }
+
+    calcularValorTotalItens(){
+        let carrinhoCompras = this._produtoService.listarCarrinhoCompras();
+        let valorTotal = 0;
+
+        if (carrinhoCompras != null){
+            carrinhoCompras.forEach(element => {
+                valorTotal = valorTotal + (element.preco);    
+            });
+        }
+
+        return valorTotal;
     }
 
     detalhesProduto(){
+        console.log(this._produtoService.listarCarrinhoCompras());
         this.navCtrl.push(FinalizarPedido);
+    }
+
+    editarProduto(produto: ProdutoEntity){
+        this.navCtrl.push(DetalhesProduto, {produto: produto, acao: 'EDITAR'})
     }
 
     async scanBarcode(){
